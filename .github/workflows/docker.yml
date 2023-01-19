@@ -10,14 +10,11 @@ on:
       - '.github/workflows/docker.yml'
       - 'Docker/**'
       
-env:
-  NAME: hello-world #镜像名称
-      
 jobs:
   docker:
     uses: WaterLemons2k/Docker/.github/workflows/docker.yml@main
     with:
       context: Docker
-      tags: waterlemons2k/test:${{ env.NAME }}
+      tags: waterlemons2k/test:hello-world
     secrets:
       TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
