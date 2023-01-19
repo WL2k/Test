@@ -16,3 +16,4 @@ jobs:
       run: |
         date '+%F %X' > DATE
         cat DATE
+      commit_message: "feat: add DATE"
