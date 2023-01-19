@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/uses-workflow_call.yml'
+      - '.github/workflows/workflow_call.yml'
       
 jobs:
   uses:
