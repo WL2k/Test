@@ -1,0 +1,10 @@
+name: uses workflow_call
+
+on:
+  push:
+    paths:
+      - '.github/workflows/use-workflow_call.yml'
+      
+jobs:
+  uses:
+    uses: ./.github/workflows/workflow_call.yml
