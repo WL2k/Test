@@ -15,6 +15,9 @@ jobs:
     uses: WaterLemons2k/Docker/.github/workflows/docker.yml@main
     with:
       context: Docker
-      tags: waterlemons2k/test:hello-world
+      platforms: amd64,arm,arm64
+      tags: |
+        waterlemons2k/test
+        waterlemons2k/test:hello-world
     secrets:
       TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
