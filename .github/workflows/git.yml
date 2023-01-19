@@ -10,26 +10,9 @@ on:
       - '.github/workflows/git.yml'
       
 jobs:
-  git:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/Checkout@v3
-      
-      - name: Create DATE file
-        run: date '+%F %X' > DATE
-          
-      - name: Git
-        id: git
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "feat: add DATE"
-          commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-
-      - name: Keepalive Workflow
-        if: steps.git.outputs.changes_detected == 'false'
-        uses: gautamkrishnar/keepalive-workflow@v1
-        with:
-          commit_message: "chore: empty commit to keep cron active"
-          committer_username: github-actions[bot]
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+  cache:
+    uses: WaterLemons2k/workflows/.github/workflows/git.yml@main
+    with:
+      run: |
+        date '+%F %X' > DATE
+        cat DATE
