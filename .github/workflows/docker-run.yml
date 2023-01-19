@@ -1,0 +1,21 @@
+name: Docker run
+
+on:
+  workflow_call:
+    inputs:
+      image:
+        required: true
+        type: string
+      run:
+        required: true
+        type: string
+      shell:
+        default: 'sh'
+        required: false
+        type: string
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run
+        run: docker run -v "/var/run/docker.sock":"/var/run/docker.sock" --entrypoint=${{ inputs.shell }} ${{ inputs.image }} -c "${inputs.run//$'\n'/;}"
