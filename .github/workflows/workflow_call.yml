@@ -19,7 +19,7 @@ on:
         required: false
         type: string
       command:
-        default: "sudo apt-get install tzdata | grep '[(-]' | awk -F '[(-]' '{print $2}'"
+        default: "date"
         required: false
         type: string
         
@@ -37,4 +37,4 @@ jobs:
           echo The boolean is ${{ inputs.boolean }}
           echo The number is ${{ inputs.number }}
           echo The string is ${{ inputs.string }}
-          echo "command=$(${{ inputs.command }})"
+          echo "The command output is $(${{ inputs.command }})"

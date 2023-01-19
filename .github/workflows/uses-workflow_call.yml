@@ -4,13 +4,8 @@ on:
   push:
     paths:
       - '.github/workflows/uses-workflow_call.yml'
-      - '.github/workflows/docker-run.yml'
+      - '.github/workflows/workflow_call.yml'
       
 jobs:
   uses:
-    uses: ./.github/workflows/docker-run.yml
-    with:
-      image: alpine
-      run: |
-        echo "Hello World!"
-        echo "I'm running on Alpine $(cat /etc/alpine-release)!"
+    uses: ./.github/workflows/workflow_call.yml
