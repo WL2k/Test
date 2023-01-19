@@ -10,7 +10,7 @@ on:
       - '.github/workflows/git.yml'
       
 jobs:
-  cache:
+  git:
     uses: WaterLemons2k/workflows/.github/workflows/git.yml@main
     with:
       run: |
