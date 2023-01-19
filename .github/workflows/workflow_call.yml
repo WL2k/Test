@@ -18,6 +18,10 @@ on:
         default: 'string'
         required: false
         type: string
+      command:
+        default: "sudo apt-get install tzdata | grep '[(-]' | awk -F '[(-]' '{print $2}'"
+        required: false
+        type: string
         
     secrets:
       token:
@@ -33,3 +37,4 @@ jobs:
           echo The boolean is ${{ inputs.boolean }}
           echo The number is ${{ inputs.number }}
           echo The string is ${{ inputs.string }}
+          echo "command=$(${{ inputs.command }})"
