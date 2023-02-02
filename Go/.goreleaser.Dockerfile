@@ -1,3 +1,3 @@
 FROM scratch
-COPY test /
-ENTRYPOINT ["/test"]
+COPY Test /
+ENTRYPOINT ["/Test"]
