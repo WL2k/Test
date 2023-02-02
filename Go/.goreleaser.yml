@@ -2,7 +2,7 @@
 builds:
 - env:
   - CGO_ENABLED=0
-  binary: mybin
+  binary: test
   goos:
   - linux
   goarch:
