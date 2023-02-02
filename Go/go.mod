@@ -1,3 +1,3 @@
-module github.com/WaterLemons2k/Test
+module test
 
 go 1.18
