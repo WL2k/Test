@@ -2,6 +2,10 @@ name: gh workflow run
 
 on:
   push:
+    branches:
+      - "main"
+    tags:
+      - "!**"
     paths:
       - '.github/workflows/gh-workflow-run.yml'
 

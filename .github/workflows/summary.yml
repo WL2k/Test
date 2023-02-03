@@ -2,6 +2,10 @@ name: Summary
 
 on:
   push:
+    branches:
+      - "main"
+    tags:
+      - "!**"
     paths:
       - '.github/workflows/summary.yml'
 

@@ -2,6 +2,10 @@ name: If env
 
 on:
   push:
+    branches:
+      - "main"
+    tags:
+      - "!**"
     paths:
       - '.github/workflows/if-env.yml'
       
