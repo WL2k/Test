@@ -19,5 +19,6 @@ jobs:
       tags: |
         waterlemons2k/test
         waterlemons2k/test:hello-world
+      description: true
     secrets:
       TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
