@@ -16,9 +16,7 @@ jobs:
     with:
       context: Docker
       platforms: amd64,arm,arm64
-      tags: ${{ jobs.docker.outputs.tags }}
-      labels: ${{ jobs.docker.outputs.labels }}
-      meta-images: waterlemons2k/test
+      tags: waterlemons2k/test
       description-repository: waterlemons2k/test
     secrets:
       TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
