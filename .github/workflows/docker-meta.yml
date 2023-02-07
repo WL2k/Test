@@ -3,7 +3,7 @@ name: Docker Meta
 on:
   push:
     paths:
-      - '.github\workflows\docker-meta.yml'
+      - '.github/workflows/docker-meta.yml'
 
 jobs:
   docker-meta:
