@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Add summary
         run: |
-          echo "# Summary" >> $GITHUB_STEP_SUMMARY
-          echo "Date: $(date)" >> $GITHUB_STEP_SUMMARY
-          echo "PWD: $PWD" >> $GITHUB_STEP_SUMMARY
+          {
+            echo "# Summary"
+            echo "Date: \`$(date)\`"
+            echo "Directory: \`$PWD\`"
+            echo "Repository: \`${{ github.repository }}\`"
+          } >> $GITHUB_STEP_SUMMARY
