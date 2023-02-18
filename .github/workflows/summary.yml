@@ -20,4 +20,5 @@ jobs:
             echo "Date: \`$(date)\`"
             echo "Directory: \`$PWD\`"
             echo "Repository: \`${{ github.repository }}\`"
+            echo "Workflow: \`${{ github.workflow }}\`"
           } >> $GITHUB_STEP_SUMMARY
