@@ -13,4 +13,4 @@ jobs:
   cmp:
     uses: WaterLemons2k/.github/.github/workflows/compare.yml@main
     with:
-      new: $(curl -s https://api.github.com/repos/WaterLemons2k/Test/releases/latest | jq -r .tag_name)
+      new: $(curl https://api.github.com/repos/WaterLemons2k/Test/releases/latest | jq -r .tag_name)
