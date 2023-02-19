@@ -1,0 +1,16 @@
+name: Compare
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "!**"
+    paths:
+      - '.github/workflows/compare.yml'
+
+jobs:
+  cmp:
+    uses: WaterLemons2k/.github/.github/workflows/compare.yml@main
+    with:
+      new: v0.0.3

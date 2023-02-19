@@ -11,6 +11,13 @@ on:
       
 jobs:
   cache:
-    uses: WaterLemons2k/workflows/.github/workflows/cache.yml@main
-    with:
-      run: echo $RANDOM
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare
+        run: touch ~/.cache
+        
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache
+          key: Cache
