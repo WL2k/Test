@@ -17,6 +17,6 @@ jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-      - name: echo env
-        if: ${{ env.FOO }} #如果存在变量 FOO
+      - name: Output env FOO
+        if: env.FOO == 'true' #如果变量 FOO 的值为 true
         run: echo ${{ env.FOO }} #输出变量 FOO 的值
