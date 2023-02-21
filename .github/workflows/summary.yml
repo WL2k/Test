@@ -21,4 +21,5 @@ jobs:
             echo "Directory: \`$PWD\`"
             echo "Repository: \`${{ github.repository }}\`"
             echo "Workflow: \`${{ github.workflow }}\`"
+            echo "Branch: \`${{ github.ref_name }}\`"
           } >> $GITHUB_STEP_SUMMARY
