@@ -24,7 +24,7 @@ jobs:
           images: |
             waterlemons2k/test
             ghcr.io/waterlemons2k/test
-          tags: type=ref,event=branch,pattern=latest
+          tags: type=raw,value=latest,enable={{is_default_branch}}
         
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -48,7 +48,7 @@ jobs:
       - name: Build and push Docker Image
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: Docker
           platforms: amd64,arm,arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
