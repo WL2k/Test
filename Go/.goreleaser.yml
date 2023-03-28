@@ -7,10 +7,23 @@ before:
     # you may remove this if you don't need go generate
     - go generate ./...
 builds:
-  - env:
+  - id: hello
+    main: ./hello
+    env:
       - CGO_ENABLED=0
     goos:
       - linux
+    flags:
+      - -trimpath
+
+  - id: homeDir
+    main: ./homeDir
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    flags:
+      - -trimpath
 
 archives:
     # use zip for windows archives
@@ -32,7 +45,6 @@ snapshot:
   name_template: "{{ incpatch .Version }}-next"
 changelog:
   sort: asc
-  use: github-native
   filters:
     exclude:
       - '^docs:'
