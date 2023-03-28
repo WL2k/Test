@@ -9,6 +9,7 @@ before:
 builds:
   - id: hello
     main: ./hello
+    binary: hello
     env: &env
       - CGO_ENABLED=0
     goos: &goos
@@ -18,12 +19,12 @@ builds:
 
   - id: homeDir
     main: ./homeDir
+    binary: homeDir
     env: *env
     goos: *goos
     flags: *flags
 
 archives:
-    # use zip for windows archives
   - id: hello-archive
     name_template: &name_template >- 
       {{ .Binary }}_
