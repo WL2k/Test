@@ -2,8 +2,6 @@ name: GoReleaser
 
 on:
   push:
-    tags:
-    - 'v*'
     paths:
       - '.github/workflows/goreleaser.yml'
       - 'Go/**'
@@ -18,12 +16,16 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         
+      - name: No push tag
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        run: echo "flags=--snapshot" >> $GITHUB_ENV
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v4
         with:
           distribution: goreleaser
           version: latest
-          args: release --clean
+          args: release --clean ${{ env.flags }}
           workdir: Go
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
