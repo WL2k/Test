@@ -1,0 +1,23 @@
+name: Make
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "!**"
+    paths:
+      - '.github/workflows/make.yml'
+      - 'Make/**'
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Make
+        run: |
+          cd Make
+          make
