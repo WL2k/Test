@@ -1,0 +1,14 @@
+name: Keep scheduled workflow activity
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "!**"
+    paths:
+      - '.github/workflows/keep-scheduled-workflow-activity.yml'
+
+jobs:
+  keep-scheduled-workflow-activity:
+    uses: WaterLemons2k/scheduled-workflow-activity-action/.github/workflows/reuseable.yml@v1
