@@ -14,7 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Prepare
-        run: touch ~/.cache
+        run: |
+          sudo apt-get install ca-certificates
+          touch ~/.cache
         
       - name: Cache
         uses: actions/cache@v3
